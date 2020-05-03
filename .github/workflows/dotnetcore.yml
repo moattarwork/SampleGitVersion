@@ -44,6 +44,6 @@ jobs:
       with:
         name: nuget-packages
         path: "**/*.nupkg"
-    - name: Create the package
+    - name: Publish the package to github packages
       run: dotnet nuget push "**/*.nupkg" --source "github"
 
