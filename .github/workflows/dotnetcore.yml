@@ -52,5 +52,6 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{github.token}} 
     - name: Publish the package to github packages
-      run: dotnet nuget push "**/*.nupkg"
+      run: dotnet nuget push "**/*.nupkg" -s https://nuget.pkg.github.com/moattarwork/index.json -k ${{ github.token }}
+      
 
