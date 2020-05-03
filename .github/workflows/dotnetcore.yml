@@ -40,7 +40,7 @@ jobs:
     - name: Build
       run: dotnet build src/sampleapi.csproj --configuration Release --no-restore -p:version=${{ steps.gitversion.outputs.semver }}
     - name: Create the package
-      run: dotnet pack src/sampleapi.csproj --configuration Release
+      run: dotnet pack src/sampleapi.csproj --configuration Release -p:version=${{ steps.gitversion.outputs.semver }}
     - uses: actions/upload-artifact@v2
       with:
         name: nuget-packages
