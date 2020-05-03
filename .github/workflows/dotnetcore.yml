@@ -44,6 +44,8 @@ jobs:
       with:
         name: nuget-packages
         path: "**/*.nupkg"
+    - run: |
+        echo "Version: ${{ github.token }}"
     - name: Publish the package to github packages
       run: dotnet nuget push "**/*.nupkg" --source "https://nuget.pkg.github.com/moattarwork/index.json" --api-key ${{ github.token }}
 
