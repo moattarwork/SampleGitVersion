@@ -46,12 +46,9 @@ jobs:
         path: "**/*.nupkg"
     - run: |
         echo "Version: ${{ github.token }}"
-    - uses: actions/setup-dotnet@v1
-      with:
-        source-url: https://nuget.pkg.github.com/moattarwork/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{github.token}} 
+    - name: Add GPR Source
+      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/moattarwork/index.json -Username moattarwork -Password ${{ github.token }}
     - name: Publish the package to github packages
-      run: dotnet nuget push "**/*.nupkg" -s https://nuget.pkg.github.com/moattarwork/index.json -k ${{ github.token }}
+      run: dotnet nuget push "**/*.nupkg" -s 'GPR' -SkipDuplicate
       
 
