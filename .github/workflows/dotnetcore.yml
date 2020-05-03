@@ -47,7 +47,7 @@ jobs:
     - run: |
         echo "Version: ${{ github.token }}"
     - name: Add GPR Source
-      run: nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/moattarwork/index.json -Username moattarwork -Password ${{ github.token }}
+      run: dotnet nuget sources add -name "GPR" -Source https://nuget.pkg.github.com/moattarwork/index.json -Username moattarwork -Password ${{ github.token }}
     - name: Publish the package to github packages
       run: dotnet nuget push "**/*.nupkg" -s 'GPR' -SkipDuplicate
       
