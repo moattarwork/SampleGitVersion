@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <IsPackable>true</IsPackable>
+    <Title>sampleapi</Title>
+    <Authors>moattarwork</Authors>
+    <RepositoryUrl>https://github.com/moattarwork/SampleGitVersion</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
   </PropertyGroup>
 
 
