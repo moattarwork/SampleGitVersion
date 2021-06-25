@@ -1,1 +1,1 @@
-# SampleGitVersion
+# SampleGitVersion - Sample 1
